@@ -17,18 +17,8 @@
 #define LSA_T(kc) MT(MOD_LSFT | MOD_LALT, kc)
 #define BP_NDSH_MAC ALGR(KC_8)
 #define MOON_LED_LEVEL LED_LEVEL
-
-enum custom_keycodes {
-  ST_MACRO_0,
-  ST_MACRO_1,
-  ST_MACRO_2,
-  ST_MACRO_3,
-  ST_MACRO_4,
-  ST_MACRO_5,
-  ST_MACRO_6,
-  ST_MACRO_7,
-  ST_MACRO_8,
-};
+#define _RAISE 1
+#define RAISE MO(_RAISE)
 
 
 enum tap_dance_codes {
@@ -57,15 +47,27 @@ enum tap_dance_codes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_5x6( // QWERTY
         TD(DANCE_ESC) , TD(DANCE_1)  , TD(DANCE_2)  , TD(DANCE_3), TD(DANCE_4)  , TD(DANCE_5),                         TD(DANCE_6), TD(DANCE_7) , TD(DANCE_8)   , TD(DANCE_9)    , TD(DANCE_0)    , KC_BSPC,
-        KC_TAB        , KC_Q         , KC_W         , KC_E       , KC_R         , KC_T,                                KC_Y       , KC_U        , KC_I          , KC_O           , KC_P           , KC_BSLS,
+        KC_TAB        , KC_Q         , KC_W         , KC_E       , KC_R         , KC_T,                                KC_Y       , KC_U        , KC_I          , KC_O           , KC_P           , TD(DANCE_BSLASH),
         KC_LSFT       , KC_A         , KC_S         , KC_D       , KC_F         , KC_G,                                KC_H       , KC_J        , KC_K          , KC_L           , TD(DANCE_CLN)  , TD(DANCE_QT),
         KC_LCTL       , KC_Z         , KC_X         , KC_C       , KC_V         , KC_B,                                KC_N       , KC_M        , TD(DANCE_LANG), TD(DANCE_RANG) , TD(DANCE_SLASH), KC_RSHIFT,
 
                                                     KC_LBRC,KC_RBRC,                                                                              KC_PLUS, KC_EQL,
-                                                                KC_SPC, KC_ENTER,                                                     KC_BSPC, KC_SPC,
+                                                                RAISE, KC_ENTER,                                                     KC_BSPC, KC_SPC,
                                                                     KC_TAB,KC_HOME,                                            KC_END,  KC_DEL,
                                                                     KC_BSPC, KC_GRV,                                           KC_LGUI, KC_LALT
   ),
+
+  [_RAISE] = LAYOUT_5x6(
+        _______,_______,_______,_______,_______,_______,                        KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLD,KC_VOLU,KC_DEL,
+        _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______,
+        _______,_______,_______,_______,_______,_______,                        KC_LEFT,KC_DOWN,KC_UP  ,KC_RIGHT,_______,_______,
+        _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______,
+                                                _______,_______,            _______,_______,
+                                                _______,_______,            _______,_______,
+                                                _______,_______,            _______,_______,
+                                                _______,_______,            _______,_______
+
+    ),
 //   [0] = LAYOUT_5x6( // COLEMAK DH
 //         TD(DANCE_ESC) , TD(DANCE_1)  , TD(DANCE_2)  , TD(DANCE_3), TD(DANCE_4)  , TD(DANCE_5),                         TD(DANCE_6), TD(DANCE_7) , TD(DANCE_8)   , TD(DANCE_9)    , TD(DANCE_0)    , KC_BSPC,
 //         KC_TAB        , TD(DANCE_Q)  , TD(DANCE_W)  , TD(DANCE_F), TD(DANCE_P)  , TD(DANCE_B),                         TD(DANCE_J), TD(DANCE_L) , TD(DANCE_U)   , TD(DANCE_Y)    , TD(DANCE_CLN)  , KC_BSLS,
@@ -131,5 +133,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
         [DANCE_SLASH] = ACTION_TAP_DANCE_DOUBLE(KC_SLASH, KC_QUES),
         [DANCE_QT] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, KC_DQT),
         [DANCE_LANG] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, KC_LABK),
+        [DANCE_RANG] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, KC_RABK),
         [DANCE_RANG] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, KC_RABK),
 };
