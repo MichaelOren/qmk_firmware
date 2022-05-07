@@ -54,11 +54,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_LBRC,KC_RBRC,                                                                              KC_PLUS, KC_EQL,
                                                                 RAISE, KC_ENTER,                                                     KC_BSPC, KC_SPC,
                                                                     KC_TAB,KC_HOME,                                            KC_END,  KC_DEL,
-                                                                    KC_BSPC, KC_GRV,                                           KC_LGUI, KC_LALT
+                                                                    KC_BSPC, KC_LGUI,                                          KC_RGUI, KC_LALT
   ),
 
   [_RAISE] = LAYOUT_5x6(
-        _______,_______,_______,_______,_______,_______,                        KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLD,KC_VOLU,KC_DEL,
+        KC_TILDE,_______,_______,_______,_______,_______,                        KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLD,KC_VOLU,KC_DEL,
         _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______,
         _______,_______,_______,_______,_______,_______,                        KC_LEFT,KC_DOWN,KC_UP  ,KC_RIGHT,_______,_______,
         _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______,
@@ -134,5 +134,14 @@ qk_tap_dance_action_t tap_dance_actions[] = {
         [DANCE_QT] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, KC_DQT),
         [DANCE_LANG] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, KC_LABK),
         [DANCE_RANG] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, KC_RABK),
-        [DANCE_RANG] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, KC_RABK),
 };
+
+
+
+// // MACROS
+
+// enum {
+//   RIGHT_SPACE,
+// }
+
+// bool process
