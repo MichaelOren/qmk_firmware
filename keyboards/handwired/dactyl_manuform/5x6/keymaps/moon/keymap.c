@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT       , KC_A         , KC_S         , KC_D       , KC_F         , KC_G,                                KC_H       , KC_J        , KC_K          , KC_L           , TD(DANCE_CLN)  , TD(DANCE_QT),
         KC_LCTL       , KC_Z         , KC_X         , KC_C       , KC_V         , KC_B,                                KC_N       , KC_M        , TD(DANCE_LANG), TD(DANCE_RANG) , TD(DANCE_SLASH), KC_RSHIFT,
 
-                                                    KC_LBRC,KC_RBRC,                                                                              KC_PLUS, KC_EQL,
+                                                    TD(DANCE_LBRC),TD(DANCE_RBRC),                                                                              KC_PLUS, KC_EQL,
                                                                 RAISE, KC_ENTER,                                                     KC_BSPC, KC_SPC,
                                                                     KC_TAB,KC_HOME,                                            KC_END,  KC_DEL,
                                                                     KC_BSPC, KC_LGUI,                                          KC_RGUI, KC_LALT
