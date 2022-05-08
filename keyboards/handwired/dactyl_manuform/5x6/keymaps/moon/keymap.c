@@ -18,7 +18,9 @@
 #define BP_NDSH_MAC ALGR(KC_8)
 #define MOON_LED_LEVEL LED_LEVEL
 #define _RAISE 1
+#define _LOWER 2
 #define RAISE MO(_RAISE)
+#define LOWER MO(_LOWER)
 
 
 enum tap_dance_codes {
@@ -68,17 +70,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                 _______,_______,            _______,_______
 
     ),
-//   [0] = LAYOUT_5x6( // COLEMAK DH
-//         TD(DANCE_ESC) , TD(DANCE_1)  , TD(DANCE_2)  , TD(DANCE_3), TD(DANCE_4)  , TD(DANCE_5),                         TD(DANCE_6), TD(DANCE_7) , TD(DANCE_8)   , TD(DANCE_9)    , TD(DANCE_0)    , KC_BSPC,
-//         KC_TAB        , TD(DANCE_Q)  , TD(DANCE_W)  , TD(DANCE_F), TD(DANCE_P)  , TD(DANCE_B),                         TD(DANCE_J), TD(DANCE_L) , TD(DANCE_U)   , TD(DANCE_Y)    , TD(DANCE_CLN)  , KC_BSLS,
-//         KC_LSFT       , TD(DANCE_A)  , TD(DANCE_R)  , TD(DANCE_S), TD(DANCE_T)  , TD(DANCE_G),                         TD(DANCE_M), TD(DANCE_N) , TD(DANCE_E)   , TD(DANCE_I)    , TD(DANCE_O)    , TD(DANCE_QT),
-//         KC_LCTL       , TD(DANCE_Z)  , TD(DANCE_X)  , TD(DANCE_C), TD(DANCE_D)  , TD(DANCE_V),                         TD(DANCE_K), TD(DANCE_H) , TD(DANCE_LANG), TD(DANCE_RANG) , TD(DANCE_SLASH), KC_RSHIFT,
+  [_LOWER] = LAYOUT_5x6(
+      KC_F12 , KC_F1 , KC_F2 , KC_F3 , KC_F4 , KC_F5 ,         KC_F6  , KC_F7 , KC_F8 , KC_F9 ,KC_F10 ,KC_F11 ,
+      _______,_______,_______,_______,_______,_______,         _______,KC_KP_7,KC_KP_8,KC_KP_9,_______,_______,
+      _______,_______,_______,_______,_______,_______,         _______,KC_KP_4,KC_KP_5,KC_KP_6,_______,_______,
+      _______,_______,_______,_______,_______,_______,         _______,KC_KP_1,KC_KP_2,KC_KP_3,_______,_______,
+                      _______,_______,                                         _______,_______,
+                                      _______,_______,         _______,_______,
+                                      _______,_______,         _______,_______,
+                                      _______,_______,         _______,_______
+    ),
 
-//                                                     KC_LBRC,KC_RBRC,                                                                              KC_PLUS, KC_EQL,
-//                                                                     KC_SPC,KC_SPC,                                                 KC_ENT, KC_SPC,
-//                                                                     KC_TAB,KC_HOME,                                                KC_END,  KC_DEL,
-//                                                                     KC_BSPC, KC_GRV,                                               KC_LGUI, KC_LALT
-//   ),
 //   [0] = LAYOUT_5x6(
 //     KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,
 //     KC_TAB,         TD(DANCE_0),    TD(DANCE_1),    TD(DANCE_2),    TD(DANCE_3),    TD(DANCE_4),    KC_AUDIO_VOL_UP,                                KC_MEDIA_NEXT_TRACK,TD(DANCE_I),   TD(DANCE_O),   TD(DANCE_P),   KC_P,           KC_QUOTE,       TD(DANCE_A),
