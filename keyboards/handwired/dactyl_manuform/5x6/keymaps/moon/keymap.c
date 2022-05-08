@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     TD(DANCE_LBRC),TD(DANCE_RBRC),                                                                              KC_PLUS, KC_EQL,
                                                                 RAISE, KC_ENTER,                                                     KC_BSPC, KC_SPC,
                                                                     KC_TAB,KC_HOME,                                            KC_END,  KC_DEL,
-                                                                    KC_BSPC, KC_LGUI,                                          KC_RGUI, KC_LALT
+                                                                    KC_RALT, KC_LGUI,                                          KC_RGUI, KC_LALT
   ),
 
   [_RAISE] = LAYOUT_5x6(
