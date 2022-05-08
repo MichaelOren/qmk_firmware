@@ -44,6 +44,8 @@ enum tap_dance_codes {
   DANCE_QT,
   DANCE_LANG,
   DANCE_RANG,
+  DANCE_EQL,
+  DANCE_MNS,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -53,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT       , KC_A         , KC_S         , KC_D       , KC_F         , KC_G,                                KC_H       , KC_J        , KC_K          , KC_L           , TD(DANCE_CLN)  , TD(DANCE_QT),
         KC_LCTL       , KC_Z         , KC_X         , KC_C       , KC_V         , KC_B,                                KC_N       , KC_M        , TD(DANCE_LANG), TD(DANCE_RANG) , TD(DANCE_SLASH), KC_RSHIFT,
 
-                                                    TD(DANCE_LBRC),TD(DANCE_RBRC),                                                                              KC_PLUS, KC_EQL,
+                                                    TD(DANCE_LBRC),TD(DANCE_RBRC),                                                                              TD(DANCE_EQL), TD(DANCE_MNS),
                                                                 RAISE, KC_ENTER,                                                     KC_BSPC, KC_SPC,
                                                                     KC_TAB,KC_HOME,                                            KC_END,  KC_DEL,
                                                                     KC_RALT, KC_LGUI,                                          KC_RGUI, KC_LALT
@@ -75,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______,_______,_______,_______,_______,_______,         _______,KC_KP_7,KC_KP_8,KC_KP_9,_______,_______,
       _______,_______,_______,_______,_______,_______,         _______,KC_KP_4,KC_KP_5,KC_KP_6,_______,_______,
       _______,_______,_______,_______,_______,_______,         _______,KC_KP_1,KC_KP_2,KC_KP_3,_______,_______,
-                      _______,_______,                                         _______,_______,
+                      _______,_______,                                         KC_KP_0,_______,
                                       _______,_______,         _______,_______,
                                       _______,_______,         _______,_______,
                                       _______,_______,         _______,_______
@@ -136,6 +138,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
         [DANCE_QT] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, KC_DQT),
         [DANCE_LANG] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, KC_LABK),
         [DANCE_RANG] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, KC_RABK),
+        [DANCE_EQL] = ACTION_TAP_DANCE_DOUBLE(KC_EQL, KC_PLUS),
+        [DANCE_MNS] = ACTION_TAP_DANCE_DOUBLE(KC_MINUS, KC_UNDS),
 };
 
 
