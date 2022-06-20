@@ -50,14 +50,14 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_5x6( // QWERTY
-        TD(DANCE_ESC) , TD(DANCE_1)  , TD(DANCE_2)  , TD(DANCE_3), TD(DANCE_4)  , TD(DANCE_5),                         TD(DANCE_6), TD(DANCE_7) , TD(DANCE_8)   , TD(DANCE_9)    , TD(DANCE_0)    , KC_BSPC,
+        TD(DANCE_ESC) , TD(DANCE_1)  , TD(DANCE_2)  , TD(DANCE_3), TD(DANCE_4)  , TD(DANCE_5),                         TD(DANCE_6), TD(DANCE_7) , TD(DANCE_8)   , TD(DANCE_9)    , TD(DANCE_0)    , KC_DEL,
         KC_TAB        , KC_Q         , KC_W         , KC_E       , KC_R         , KC_T,                                KC_Y       , KC_U        , KC_I          , KC_O           , KC_P           , TD(DANCE_BSLASH),
         KC_LSFT       , KC_A         , KC_S         , KC_D       , KC_F         , KC_G,                                KC_H       , KC_J        , KC_K          , KC_L           , TD(DANCE_CLN)  , TD(DANCE_QT),
         KC_LCTL       , KC_Z         , KC_X         , KC_C       , KC_V         , KC_B,                                KC_N       , KC_M        , TD(DANCE_LANG), TD(DANCE_RANG) , TD(DANCE_SLASH), KC_RSHIFT,
 
-                                                    TD(DANCE_LBRC),TD(DANCE_RBRC),                                                                              TD(DANCE_EQL), TD(DANCE_MNS),
+                                                    TD(DANCE_LBRC),TD(DANCE_RBRC),                                                                              TD(DANCE_MNS), TD(DANCE_EQL),
                                                                 RAISE, KC_ENTER,                                                     KC_BSPC, KC_SPC,
-                                                                    KC_TAB,C(KC_LEFT),                                            LOWER,  KC_DEL,
+                                                                    C(KC_LEFT), RAISE,                                            LOWER,  C(KC_RIGHT),
                                                                     KC_RALT, KC_LGUI,                                          KC_RGUI, KC_LALT
   ),
 
